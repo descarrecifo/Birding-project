@@ -6,23 +6,29 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         BirdDatabase birdModel = new BirdDatabase();
-        boolean option = true;
-        while (option) {
-            System.out.println("0 Quit\n 1 Add\n 2 Observation\n 3 Show\n 4 Statistics\n");
-            String command = ask(scanner);
+        int command;
+        System.out.println("0 Quit\n 1 Add\n 2 Observation\n 3 Show\n 4 Statistics\n");
+        do {
+            command = ask(scanner);
             switch (command) {
-                case "0" -> option = false;
-                case "1" -> add(scanner, birdModel);
-                case "2" -> observation(scanner, birdModel);
-                case "3" -> show(scanner, birdModel);
-                case "4" -> statistics(scanner, birdModel);
-                default -> System.out.println("Unknown Option!");
+                case 1 -> add(scanner, birdModel);
+                case 2 -> observation(scanner, birdModel);
+                case 3 -> show(scanner, birdModel);
+                case 4 -> statistics(scanner, birdModel);
+                default -> {
+                    if(command == 0 ){
+                        System.out.println("Hasta la proxima");
+                    }
+                    else{
+                        System.out.println("Unknown Option!");
+                    }
+                }
             }
-        }
+        } while (command != 0);
     }
 
-    public static String ask(Scanner input) {
-        return input.nextLine();
+    public static int ask(Scanner input) {
+        return Integer.parseInt(input.nextLine());
     }
 
     public static void add(Scanner input, BirdDatabase birdModel) {
