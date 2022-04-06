@@ -10,58 +10,26 @@ public class Main {
         BirdDatabase db = new BirdDatabase();
 
         while (true) {
-            System.out.println("MENU");
-            System.out.println(" ");
-            System.out.println("0. Quit");
-            System.out.println("1. Add");
-            System.out.println("2. Observation");
-            System.out.println("3. Show");
-            System.out.println(" ");
-            System.out.println("Choose an option:");
+            menu();
             int op = scanner.nextInt();
             String option;
-
 
             if (op == 0) {
                 break;
             } else {
 
-                switch (op) {
-                    case 1:
-                        option = "Add bird";
-                        break;
-                    case 2:
-                        option = "Add observation";
-                        break;
-                    case 3:
-                        option = "Show bird";
-                        break;
-                    default:
-                        option = "Invalid option";
-                }
+                option = switch (op) {
+                    case 1 -> "Add bird";
+                    case 2 -> "Add observation";
+                    case 3 -> "Show bird";
+                    default -> "Invalid option";
+                };
 
             }
             System.out.println(option);
-
-            /*
-            String command = ask(scanner, "Option?");
-            if (command.equals("Quit")) {
-                break;
-            } else if (command.equals("Add")) {
-               add(scanner,db);
-            } else if (command.equals("Observation")) {
-                observation(scanner,db);
-            } else if (command.equals("Show")) {
-                show(scanner,db);
-            } else if (command.equals("Statistics")) {
-                statistics(scanner,db);
-            } else {
-                System.out.println("Unknown command!");
-            }
-        }*/
-
-            System.out.println("Exit while");
+            System.out.println(" ");
         }
+
 /*
         public static String ask (Scanner input, String option){
             return option;
@@ -83,6 +51,17 @@ public class Main {
 
         }*/
 
+    }
+
+    private static void menu() {
+        System.out.println("MENU");
+        System.out.println(" ");
+        System.out.println("0. Quit");
+        System.out.println("1. Add");
+        System.out.println("2. Observation");
+        System.out.println("3. Show");
+        System.out.println(" ");
+        System.out.println("Choose an option:");
     }
 
 }
