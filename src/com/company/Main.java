@@ -10,58 +10,54 @@ public class Main {
         BirdDatabase db = new BirdDatabase();
 
         while (true) {
+            boolean exit = false;
             menu();
-            int op = scanner.nextInt();
-            String option;
+            int value = scanner.nextInt();
 
-            if (op == 0) {
-                break;
-            } else {
-
-                option = switch (op) {
-                    case 1 -> "Add bird";
-                    case 2 -> "Add observation";
-                    case 3 -> "Show bird";
-                    default -> "Invalid option";
-                };
-
+            switch (value) {
+                case 0 -> exit = true;
+                case 1 -> addBird();
+                case 2 -> addObservation();
+                case 3 -> showBirds();
+                case 4 -> statistics();
+                default -> System.out.println("Invalid option\n");
             }
-            System.out.println(option);
-            System.out.println(" ");
+            if (exit) break;
         }
-
-/*
-        public static String ask (Scanner input, String option){
-            return option;
-        }
-
-        public static void add (Scanner input, BirdDatabase db){
-
-        }
-
-        public static void observation (Scanner input, BirdDatabase db){
-
-        }
-
-        public static void show (Scanner input, BirdDatabase db){
-
-        }
-
-        public static void statistics (Scanner input, BirdDatabase db){
-
-        }*/
 
     }
 
-    private static void menu() {
+    public static void menu() {
         System.out.println("MENU");
         System.out.println(" ");
         System.out.println("0. Quit");
         System.out.println("1. Add");
         System.out.println("2. Observation");
         System.out.println("3. Show");
+        System.out.println("4. Statistics");
         System.out.println(" ");
         System.out.println("Choose an option:");
+    }
+
+    public static void addBird(){
+        System.out.println("Add bird");
+        System.out.println(" ");
+    }
+
+
+    public static void addObservation(){
+        System.out.println("Add observation");
+        System.out.println(" ");
+    }
+
+    public static void showBirds(){
+        System.out.println("Show birds");
+        System.out.println(" ");
+    }
+
+    public static void statistics(){
+        System.out.println("Statistics");
+        System.out.println(" ");
     }
 
 }
