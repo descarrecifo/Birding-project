@@ -13,6 +13,7 @@ public class Bird {
         this.observations = observations;
     }
 
+    public Bird(){}
     //methods
 
 
