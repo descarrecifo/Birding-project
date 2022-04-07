@@ -15,14 +15,12 @@ public class Main {
     }
 
     public static void menu() {
-        System.out.println("MENU");
-        System.out.println(" ");
+        System.out.println("MENU\n");
         System.out.println("0. Quit");
         System.out.println("1. Add");
         System.out.println("2. Observation");
         System.out.println("3. Show");
-        System.out.println("4. Statistics");
-        System.out.println(" ");
+        System.out.println("4. Statistics\n");
         System.out.println("Choose an option:");
     }
 
@@ -45,24 +43,20 @@ public class Main {
     }
 
     public static void addBird(){
-        System.out.println("Add bird");
-        System.out.println(" ");
+        System.out.println("Add bird\n");
     }
 
 
     public static void addObservation(){
-        System.out.println("Add observation");
-        System.out.println(" ");
+        System.out.println("Add observation\n");
     }
 
     public static void showBirds(){
-        System.out.println("Show birds");
-        System.out.println(" ");
+        System.out.println("Show birds\n");
     }
 
     public static void statistics(){
-        System.out.println("Statistics");
-        System.out.println(" ");
+        System.out.println("Statistics\n");
     }
 
 }
