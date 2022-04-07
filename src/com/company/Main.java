@@ -15,13 +15,15 @@ public class Main {
     }
 
     public static void menu() {
-        System.out.println("MENU\n");
-        System.out.println("0. Quit");
-        System.out.println("1. Add");
-        System.out.println("2. Observation");
-        System.out.println("3. Show");
-        System.out.println("4. Statistics\n");
-        //System.out.println("Choose an option:");
+        System.out.println("**********************");
+        System.out.println("*        MENU        *");
+        System.out.println("* 0. Quit            *");
+        System.out.println("* 1. Add Bird        *");
+        System.out.println("* 2. Modify Bird     *");
+        System.out.println("* 3. Add Observation *");
+        System.out.println("* 4. Show All        *");
+        System.out.println("* 5. Search Bird     *");
+        System.out.println("**********************");
     }
 
     public static void menuOptions(){
