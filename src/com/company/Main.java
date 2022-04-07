@@ -2,13 +2,31 @@ package com.company;
 
 import java.util.Scanner;
 
+
 public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         BirdDatabase db = new BirdDatabase();
+        menuOptions();
 
+    }
+
+    public static void menu() {
+        System.out.println("MENU");
+        System.out.println(" ");
+        System.out.println("0. Quit");
+        System.out.println("1. Add");
+        System.out.println("2. Observation");
+        System.out.println("3. Show");
+        System.out.println("4. Statistics");
+        System.out.println(" ");
+        System.out.println("Choose an option:");
+    }
+
+    public static void menuOptions(){
         while (true) {
             boolean exit = false;
             menu();
@@ -24,19 +42,6 @@ public class Main {
             }
             if (exit) break;
         }
-
-    }
-
-    public static void menu() {
-        System.out.println("MENU");
-        System.out.println(" ");
-        System.out.println("0. Quit");
-        System.out.println("1. Add");
-        System.out.println("2. Observation");
-        System.out.println("3. Show");
-        System.out.println("4. Statistics");
-        System.out.println(" ");
-        System.out.println("Choose an option:");
     }
 
     public static void addBird(){
