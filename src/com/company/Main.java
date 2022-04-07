@@ -6,12 +6,12 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int command;
-
+        BirdDatabase bird = new BirdDatabase();
         do {
             System.out.println(" 0 Quit\n 1 Add\n 2 Observation\n 3 Show\n 4 Statistics\n");
             command = Integer.parseInt(ask(scanner, "Option? "));
             switch (command) {
-                case 1 -> add(scanner);
+                case 1 -> add(scanner, bird);
                 case 2 -> observation(scanner);
                 case 3 -> show(scanner);
                 case 4 -> statistics(scanner);
@@ -27,9 +27,9 @@ public class Main {
         return input.nextLine();
     }
 
-    public static void add(Scanner input) {
+    public static void add(Scanner input, BirdDatabase bird) {
         String name;
-        BirdDatabase bird = new BirdDatabase();
+
         while (true) {
             name =  ask(input, "Name: ");
 
