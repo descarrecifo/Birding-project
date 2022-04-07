@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        BirdDatabase db = new BirdDatabase();
+        //BirdDatabase db = new BirdDatabase();
         menuOptions();
 
     }
@@ -21,14 +21,14 @@ public class Main {
         System.out.println("2. Observation");
         System.out.println("3. Show");
         System.out.println("4. Statistics\n");
-        System.out.println("Choose an option:");
+        //System.out.println("Choose an option:");
     }
 
     public static void menuOptions(){
         while (true) {
             boolean exit = false;
             menu();
-            int value = scanner.nextInt();
+            int value = Integer.parseInt(ask(scanner, "Choose an option:"));
 
             switch (value) {
                 case 0 -> exit = true;
@@ -40,6 +40,11 @@ public class Main {
             }
             if (exit) break;
         }
+    }
+
+    public static String ask(Scanner scanner, String text) {
+        System.out.println(text);
+        return scanner.next();
     }
 
     public static void addBird(){
