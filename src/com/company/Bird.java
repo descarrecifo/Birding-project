@@ -48,6 +48,6 @@ public class Bird {
 
     @Override
     public String toString() {
-        return "Bird [name=" + name + ", nameLatin=" + nameLatin + ", observations=" + observations + "]";
+        return "Bird [name:" + name + ", latin name:" + nameLatin + ", number of observations:" + observations + "]";
     }
 }
