@@ -1,19 +1,27 @@
 package com.company;
 
-import java.util.Locale;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Main {
 
-    static Scanner scanner = new Scanner(System.in);
+    static  Scanner scanner = new Scanner(System.in);
 
-    static Bird testBird = new Bird("Test", "Test1", 4);
 
     public static void main(String[] args) {
 
-        //BirdDatabase db = new BirdDatabase();
-        menuOptions();
+
+
+        Bird testBird = new Bird("Test1", "latinTest1", 4);
+
+        Bird testBird2 = new Bird("Test2", "latinTest2", 7);
+
+        //ArrayList<Bird> birdList = new ArrayList<>();
+
+        //birdList.add(new Bird("Test1", "latinTest1", 4));
+
+        menuOptions(testBird);
 
     }
 
@@ -29,22 +37,22 @@ public class Main {
         System.out.println("**********************");
     }
 
-    public static void menuOptions(){
+    public static void menuOptions(Bird testBird){
         while (true) {
-            boolean exit = false; //the variable exit is used to break the while loop
             menu();
             int value = Integer.parseInt(ask(scanner, "Choose an option:")); //with the method ask, we give a value to choose
                                                                                  //the different cases of the switch
             switch (value) {
-                case 0 -> exit = true;
+                case 0 -> {
+                    return;
+                }
                 case 1 -> addBird();
-                case 2 -> modifyBird();
-                case 3 -> addObservation();
+                case 2 -> modifyBird(testBird);
+                case 3 -> addObservation(testBird);
                 case 4 -> showBirds();
                 case 5 -> searchBird();
                 default -> System.out.println("Invalid option\n");
             }
-            if (exit) break;
         }
     }
 
@@ -57,10 +65,10 @@ public class Main {
         System.out.println("Add bird\n");
     }
 
-    public static void modifyBird(){
+    public static void modifyBird(Bird testBird){
 
         modifyMenu();
-        modifyOptions();
+        modifyOptions(testBird);
 
     }
 
@@ -75,28 +83,28 @@ public class Main {
         System.out.println("****************************");
     }
 
-    public static void modifyOptions(){
+    public static void modifyOptions(Bird bird){
         while (true) {
-            boolean exit = false; //the variable exit is used to break the while loop
             modifyMenu();
             int value = Integer.parseInt(ask(scanner, "Choose an option:")); //with the method ask, we give a value to choose
             //the different cases of the switch
             switch (value) {
-                case 0 -> exit = true;
-                case 1 -> testBird.setName(ask(scanner, "New name:"));
-                case 2 -> testBird.setNameLatin(ask(scanner, "New latin name:"));
-                case 3 -> testBird.setObservations(Integer.parseInt(ask(scanner, "New number of observations:")));
-                case 4 -> System.out.println(testBird.toString());
+                case 0 -> {
+                    return;
+                }
+                case 1 -> bird.setName(ask(scanner, "New name:"));
+                case 2 -> bird.setNameLatin(ask(scanner, "New latin name:"));
+                case 3 -> bird.setObservations(Integer.parseInt(ask(scanner, "New number of observations:")));
+                case 4 -> System.out.println(bird.toString());
                 default -> System.out.println("Invalid option\n");
             }
-            if (exit) break;
         }
     }
 
-    public static void addObservation(){
+    public static void addObservation(Bird bird){
         int observations = Integer.parseInt(ask(scanner, "How many observations to this bird do you want to add?"));
-        int oldObservations = testBird.getObservations();
-        testBird.setObservations(oldObservations+observations);
+        int oldObservations = bird.getObservations();
+        bird.setObservations(oldObservations+observations);
     }
 
     public static void showBirds(){
