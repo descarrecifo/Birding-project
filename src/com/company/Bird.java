@@ -15,6 +15,10 @@ public class Bird {
         this.observations = observations;
     }
 
+    public Bird() {
+
+    }
+
     //methods
 
 
@@ -52,4 +56,5 @@ public class Bird {
     public String toString() {
         return "Bird [name=" + name + ", nameLatin=" + nameLatin + ", observations=" + observations + "]";
     }
+
 }
