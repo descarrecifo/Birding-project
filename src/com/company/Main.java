@@ -8,7 +8,6 @@ public class Main {
 
     static  Scanner scanner = new Scanner(System.in);
 
-
     public static void main(String[] args) {
 
 
@@ -17,9 +16,8 @@ public class Main {
 
         Bird testBird2 = new Bird("Test2", "latinTest2", 7);
 
-        //ArrayList<Bird> birdList = new ArrayList<>();
-
-        //birdList.add(new Bird("Test1", "latinTest1", 4));
+        /*ArrayList<Bird> birdList = new ArrayList<>();
+        birdList.add(new Bird("Test1", "latinTest1", 4));*/
 
         menuOptions(testBird);
 
@@ -43,9 +41,7 @@ public class Main {
             int value = Integer.parseInt(ask(scanner, "Choose an option:")); //with the method ask, we give a value to choose
                                                                                  //the different cases of the switch
             switch (value) {
-                case 0 -> {
-                    return;
-                }
+                case 0 -> {return;}
                 case 1 -> addBird();
                 case 2 -> modifyBird(testBird);
                 case 3 -> addObservation(testBird);
@@ -66,16 +62,14 @@ public class Main {
     }
 
     public static void modifyBird(Bird testBird){
-
         modifyMenu();
         modifyOptions(testBird);
-
     }
 
     public static void modifyMenu() {
         System.out.println("****************************");
         System.out.println("*           MODIFY         *");
-        System.out.println("* 0. Return to main menu   *");
+        System.out.println("* 0. Return to Main Menu   *");
         System.out.println("* 1. Modify Name           *");
         System.out.println("* 2. Modify Latin Name     *");
         System.out.println("* 3. Modify Observation    *");
@@ -87,11 +81,9 @@ public class Main {
         while (true) {
             modifyMenu();
             int value = Integer.parseInt(ask(scanner, "Choose an option:")); //with the method ask, we give a value to choose
-            //the different cases of the switch
+                                                                                  //the different cases of the switch
             switch (value) {
-                case 0 -> {
-                    return;
-                }
+                case 0 -> {return;}
                 case 1 -> bird.setName(ask(scanner, "New name:"));
                 case 2 -> bird.setNameLatin(ask(scanner, "New latin name:"));
                 case 3 -> bird.setObservations(Integer.parseInt(ask(scanner, "New number of observations:")));
@@ -102,9 +94,9 @@ public class Main {
     }
 
     public static void addObservation(Bird bird){
-        int observations = Integer.parseInt(ask(scanner, "How many observations to this bird do you want to add?"));
-        int oldObservations = bird.getObservations();
-        bird.setObservations(oldObservations+observations);
+        int newObsNum = Integer.parseInt(ask(scanner, "How many observations to this bird do you want to add?"));
+        int oldObsNum = bird.getObservations();
+        bird.setObservations(oldObsNum+newObsNum);
     }
 
     public static void showBirds(){
