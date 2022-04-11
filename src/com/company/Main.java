@@ -94,9 +94,8 @@ public class Main {
     }
 
     public static void addObservation(Bird bird){
-        int newObsNum = Integer.parseInt(ask(scanner, "How many observations to this bird do you want to add?"));
-        int oldObsNum = bird.getObservations();
-        bird.setObservations(oldObsNum+newObsNum);
+        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to this bird do you want to add?"));
+        bird.setObservations(bird.getObservations()+ObsNum);
     }
 
     public static void showBirds(){
