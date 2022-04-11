@@ -4,12 +4,17 @@ import static com.company.Main.ask;
 import static com.company.Main.scanner;
 
 public class Bird {
-    //attributes
+
+    //************************************************************************************
+    //********************************** ATTRIBUTES **************************************
+    //************************************************************************************
     private String name;
     private String nameLatin;
     private int observations;
 
-    //constructor
+    //************************************************************************************
+    //********************************** CONSTRUCTOR *************************************
+    //************************************************************************************
     public Bird(String name,  String nameLatin, int observations ) {
         this.name = name;
         this.nameLatin = nameLatin;
@@ -19,7 +24,9 @@ public class Bird {
     //methods
 
 
-    ////getters and setters
+    //************************************************************************************
+    //**************************** GETTERS AND SETTERS ***********************************
+    //************************************************************************************
 
     public String getName() {
         return name;

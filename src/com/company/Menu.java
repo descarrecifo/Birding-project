@@ -3,6 +3,7 @@ package com.company;
 import java.util.ArrayList;
 
 import static com.company.Bird.addObservation;
+import static com.company.BirdDatabase.*;
 import static com.company.Main.*;
 
 public class Menu {
@@ -27,14 +28,14 @@ public class Menu {
         while (true) {
             menu();
             int value = Integer.parseInt(ask(scanner, "Choose an option:")); //with the method ask, we give a value to choose
-            //the different cases of the switch
+                                                                                  //the different cases of the switch
             switch (value) {
                 case 0 -> {return;}
-                case 1 -> addBird();
+                case 1 -> addBird(birdList);
                 case 2 -> search(birdList, 1);
                 case 3 -> search(birdList, 2);
                 case 4 -> search(birdList, 3);
-                case 5 -> showAllBirds();
+                case 5 -> showAllBirds(birdList);
                 default -> System.out.println("Invalid option\n");
             }
         }
@@ -51,7 +52,7 @@ public class Menu {
         System.out.println("* 1. Modify Name           *");
         System.out.println("* 2. Modify Latin Name     *");
         System.out.println("* 3. Modify Observation    *");
-        System.out.println("* 4. See Bird              *");
+        System.out.println("* 4. Show Bird             *");
         System.out.println("****************************");
     }
 
@@ -91,6 +92,7 @@ public class Menu {
                             break;
                         }
                     }
+                    System.out.println("Bird didn't found");
                 }
                 case 2 -> {
                     String latinBird = ask(scanner, "Write the bird's latin name: ");
@@ -100,6 +102,7 @@ public class Menu {
                             break;
                         }
                     }
+                    System.out.println("Bird didn't found");
                 }
                 default -> System.out.println("Invalid option");
             }
