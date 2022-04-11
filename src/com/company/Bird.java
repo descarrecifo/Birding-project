@@ -1,5 +1,8 @@
 package com.company;
 
+import static com.company.Main.ask;
+import static com.company.Main.scanner;
+
 public class Bird {
     //attributes
     private String name;
@@ -42,12 +45,13 @@ public class Bird {
         this.observations = observations;
     }
 
-    public void addObservation() {
-        this.observations ++;
+    public static void addObservation(Bird bird){
+        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to "+bird.getName()+" do you want to add?"));
+        bird.setObservations(bird.getObservations()+ObsNum);
     }
 
     @Override
     public String toString() {
-        return "Bird [name:" + name + ", latin name:" + nameLatin + ", number of observations:" + observations + "]";
+        return "Name: " + name + ", Latin Name: " + nameLatin + ", Number of Observations: " + observations;
     }
 }

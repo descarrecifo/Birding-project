@@ -12,8 +12,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
         Bird testBird = new Bird("Test1", "latinTest1", 4);
 
         Bird testBird2 = new Bird("Test2", "latinTest2", 7);
@@ -23,11 +21,8 @@ public class Main {
         birdList.add(testBird2);
         birdList.add(new Bird("Test3", "latinTest3", 2));
 
-
         menuOptions(birdList);
-
     }
-
 
     public static String ask(Scanner scanner, String text) {    //this method receives the scanner and a String and returns
         System.out.println(text);                               //the output of the scanner inserted by the user
@@ -38,16 +33,11 @@ public class Main {
         System.out.println("Add bird\n");
     }
 
-    public static void addObservation(Bird bird){
-        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to "+bird.getName()+" do you want to add?"));
-        bird.setObservations(bird.getObservations()+ObsNum);
+    public static void showBird(Bird bird){
+        System.out.println(bird.toString());
     }
 
-    public static void showBirds(){
-        System.out.println("Show all birds\n");
-    }
-
-    public static void searchBird(){
+    public static void showAllBirds(){
         System.out.println("Search bird\n");
     }
 

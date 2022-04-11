@@ -2,20 +2,25 @@ package com.company;
 
 import java.util.ArrayList;
 
+import static com.company.Bird.addObservation;
 import static com.company.Main.*;
 
 public class Menu {
 
+    //************************************************************************************
+    //********************************** MAIN MENU ***************************************
+    //************************************************************************************
+
     public static void menu() {
-        System.out.println("**********************");
-        System.out.println("*        MENU        *");
-        System.out.println("* 0. Quit            *");
-        System.out.println("* 1. Add Bird        *");
-        System.out.println("* 2. Modify Bird     *");
-        System.out.println("* 3. Add Observation *");
-        System.out.println("* 4. Show All        *");
-        System.out.println("* 5. Search Bird     *");
-        System.out.println("**********************");
+        System.out.println("****************************");
+        System.out.println("*           MENU           *");
+        System.out.println("* 0. Quit                  *");
+        System.out.println("* 1. Add Bird              *");
+        System.out.println("* 2. Modify Bird           *");
+        System.out.println("* 3. Add Observation       *");
+        System.out.println("* 4. Show Bird             *");
+        System.out.println("* 5. Show All Birds        *");
+        System.out.println("****************************");
     }
 
     public static void menuOptions(ArrayList<Bird> birdList){
@@ -28,12 +33,16 @@ public class Menu {
                 case 1 -> addBird();
                 case 2 -> search(birdList, 1);
                 case 3 -> search(birdList, 2);
-                case 4 -> showBirds();
-                case 5 -> searchBird();
+                case 4 -> search(birdList, 3);
+                case 5 -> showAllBirds();
                 default -> System.out.println("Invalid option\n");
             }
         }
     }
+
+    //************************************************************************************
+    //********************************** MODIFYING ***************************************
+    //************************************************************************************
 
     public static void modifyMenu() {
         System.out.println("****************************");
@@ -50,7 +59,7 @@ public class Menu {
         while (true) {
             modifyMenu();
             int value = Integer.parseInt(ask(scanner, "Choose an option:")); //with the method ask, we give a value to choose
-            //the different cases of the switch
+                                                                                  //the different cases of the switch
             switch (value) {
                 case 0 -> {return;}
                 case 1 -> bird.setName(ask(scanner, "New name:"));
@@ -61,6 +70,10 @@ public class Menu {
             }
         }
     }
+
+    //*************************************************************************************
+    //*********************************** SEARCHING ***************************************
+    //*************************************************************************************
 
     public static void search(ArrayList<Bird> birdList, int from) {
         while (true) {
@@ -74,10 +87,7 @@ public class Menu {
                     String nameBird = ask(scanner, "Write the bird's name: ");
                     for (Bird bird : birdList) {
                         if (bird.getName().equalsIgnoreCase(nameBird)) {
-                            switch (from) {
-                                case 1 -> modifyOptions(bird);
-                                case 2 -> addObservation(bird);
-                            }
+                            searchSwitch(from, bird);
                             break;
                         }
                     }
@@ -86,16 +96,23 @@ public class Menu {
                     String latinBird = ask(scanner, "Write the bird's latin name: ");
                     for (Bird bird : birdList) {
                         if (bird.getNameLatin().equalsIgnoreCase(latinBird)) {
-                            switch (from) {
-                                case 1 -> modifyOptions(bird);
-                                case 2 -> addObservation(bird);
-                            }
+                            searchSwitch(from, bird);
                             break;
                         }
                     }
                 }
                 default -> System.out.println("Invalid option");
             }
+        }
+    }
+
+
+    //with the method search we access 3 different methods using a switch case
+    public static void searchSwitch(int from, Bird bird){
+        switch (from) {
+            case 1 -> modifyOptions(bird);
+            case 2 -> addObservation(bird);
+            case 3 -> showBird(bird);
         }
     }
 
