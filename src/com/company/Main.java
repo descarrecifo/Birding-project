@@ -18,13 +18,15 @@ public class Main {
 
         Bird testBird2 = new Bird("Test2", "latinTest2", 7);
 
-        /*ArrayList<Bird> birdList = new ArrayList<>();
-        birdList.add(new Bird("Test1", "latinTest1", 4));*/
+        ArrayList<Bird> birdList = new ArrayList<>();
+        birdList.add(testBird);
+        birdList.add(testBird2);
+        birdList.add(new Bird("Test3", "latinTest3", 2));
 
-        menuOptions(testBird);
+
+        menuOptions(birdList);
 
     }
-
 
 
     public static String ask(Scanner scanner, String text) {    //this method receives the scanner and a String and returns
@@ -36,14 +38,8 @@ public class Main {
         System.out.println("Add bird\n");
     }
 
-    public static void modifyBird(Bird testBird){
-        modifyMenu();
-        modifyOptions(testBird);
-    }
-
-
     public static void addObservation(Bird bird){
-        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to this bird do you want to add?"));
+        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to "+bird.getName()+" do you want to add?"));
         bird.setObservations(bird.getObservations()+ObsNum);
     }
 
