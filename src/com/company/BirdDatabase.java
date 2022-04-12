@@ -15,4 +15,12 @@ public class BirdDatabase {
             System.out.println(birdArray.get(x));
         }
     }
+
+    public int sizeOfBirtArray(){
+        return birdArray.size();
+    }
+
+    public int getBirdByName(String name){
+
+    }
 }
