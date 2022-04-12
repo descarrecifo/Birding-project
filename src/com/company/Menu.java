@@ -1,5 +1,7 @@
 package com.company;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.ArrayList;
 
 import static com.company.Bird.addObservation;
@@ -10,21 +12,38 @@ import static com.company.Main.*;
 public class Menu {
 
     //************************************************************************************
+    //************************************ COLOURS ***************************************
+    //************************************************************************************
+
+    // Declaring ANSI_RESET so that we can reset the color
+    public static final String ANSI_RESET = "\u001B[0m";
+
+    // Declaring the color
+    // Custom declaration
+    public static final String ANSI_YELLOW = "\u001B[33m";
+
+    // Declaring the color background
+    // Custom declaration
+    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+
+    //************************************************************************************
     //********************************** MAIN MENU ***************************************
     //************************************************************************************
 
     public static void menu() {
-        System.out.println("****************************");
-        System.out.println("*           MENU           *");
-        System.out.println("* 0. Quit                  *");
-        System.out.println("* 1. Add Bird              *");
-        System.out.println("* 2. Modify Bird           *");
-        System.out.println("* 3. Delete Bird           *");
-        System.out.println("* 4. Add Observation       *");
-        System.out.println("* 5. Show Bird             *");
-        System.out.println("* 6. Show All Birds        *");
-        System.out.println("* 7. User Statistics       *");
-        System.out.println("****************************");
+        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
+        System.out.print(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.print(ANSI_YELLOW+"           MENU           "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 0. Quit                  "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 1. Add Bird              "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 2. Modify Bird           "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 3. Delete Bird           "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 4. Add Observation       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 5. Show Bird             "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 6. Show All Birds        "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 7. User Statistics       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
     }
 
     public static void menuOptions(ArrayList<Bird> birdList){
@@ -51,14 +70,16 @@ public class Menu {
     //************************************************************************************
 
     public static void modifyMenu() {
-        System.out.println("****************************");
-        System.out.println("*           MODIFY         *");
-        System.out.println("* 0. Return to Search Menu *");
-        System.out.println("* 1. Modify Name           *");
-        System.out.println("* 2. Modify Latin Name     *");
-        System.out.println("* 3. Modify Observation    *");
-        System.out.println("* 4. Show Bird             *");
-        System.out.println("****************************");
+        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
+        System.out.print(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.print(ANSI_YELLOW+"          MODIFY          "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 0. Return to Search Menu "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 1. Modify Name           "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 2. Modify Latin Name     "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 3. Modify Observation    "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 4. Show Bird             "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
     }
 
     public static void modifyOptions(Bird bird){
@@ -135,12 +156,14 @@ public class Menu {
     }
 
     public static void searchMenu() {
-        System.out.println("********************************");
-        System.out.println("*            SEARCH            *");
-        System.out.println("* 0. Return to Main Menu       *");
-        System.out.println("* 1. Search Bird by Name       *");
-        System.out.println("* 2. Search Bird by Latin Name *");
-        System.out.println("********************************");
+        System.out.println(ANSI_YELLOW_BACKGROUND+"                                "+ANSI_RESET);
+        System.out.print(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.print(ANSI_YELLOW+"            SEARCH            "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 0. Return to Main Menu       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 1. Search Bird by Name       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 2. Search Bird by Latin Name "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_YELLOW_BACKGROUND+"                                "+ANSI_RESET);
     }
 
 }

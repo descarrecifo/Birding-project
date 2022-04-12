@@ -24,8 +24,8 @@ public class Main {
         menuOptions(birdList);
     }
 
-    public static String ask(Scanner scanner, String text) {    //this method receives the scanner and a String and returns
-        System.out.println(text);                               //the output of the scanner inserted by the user
+    public static String ask(Scanner scanner, String text) {    //this method receives the scanner and a String,
+        System.out.println(text);                               //and returns the output of the scanner inserted by the user
         return scanner.next();
     }
 
