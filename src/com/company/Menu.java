@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import static com.company.Bird.addObservation;
 import static com.company.BirdDatabase.*;
+import static com.company.BirdDatabase.showBird;
 import static com.company.Main.*;
 
 public class Menu {
@@ -18,9 +19,11 @@ public class Menu {
         System.out.println("* 0. Quit                  *");
         System.out.println("* 1. Add Bird              *");
         System.out.println("* 2. Modify Bird           *");
-        System.out.println("* 3. Add Observation       *");
-        System.out.println("* 4. Show Bird             *");
-        System.out.println("* 5. Show All Birds        *");
+        System.out.println("* 3. Delete Bird           *");
+        System.out.println("* 4. Add Observation       *");
+        System.out.println("* 5. Show Bird             *");
+        System.out.println("* 6. Show All Birds        *");
+        System.out.println("* 7. User Statistics       *");
         System.out.println("****************************");
     }
 
@@ -33,9 +36,11 @@ public class Menu {
                 case 0 -> {return;}
                 case 1 -> addBird(birdList);
                 case 2 -> search(birdList, 1);
-                case 3 -> search(birdList, 2);
-                case 4 -> search(birdList, 3);
-                case 5 -> showAllBirds(birdList);
+                case 3 -> search(birdList, 2); //delete
+                case 4 -> search(birdList, 3); //add
+                case 5 -> search(birdList, 4);
+                case 6 -> showAllBirds(birdList);
+                case 7 -> statistics(birdList);
                 default -> System.out.println("Invalid option\n");
             }
         }
@@ -73,6 +78,15 @@ public class Menu {
     }
 
     //*************************************************************************************
+    //*********************************** DELETING ****************************************
+    //*************************************************************************************
+
+    public static void deleteBird(Bird bird, ArrayList<Bird> birdList){
+        System.out.println("The bird has been deleted");
+        birdList.remove(bird);
+    }
+
+    //*************************************************************************************
     //*********************************** SEARCHING ***************************************
     //*************************************************************************************
 
@@ -88,21 +102,21 @@ public class Menu {
                     String nameBird = ask(scanner, "Write the bird's name: ");
                     for (Bird bird : birdList) {
                         if (bird.getName().equalsIgnoreCase(nameBird)) {
-                            searchSwitch(from, bird);
-                            break;
+                            searchSwitch(from, bird, birdList);
+                            return;
                         }
                     }
-                    System.out.println("Bird didn't found");
+                    System.out.println("Bird not found");
                 }
                 case 2 -> {
                     String latinBird = ask(scanner, "Write the bird's latin name: ");
                     for (Bird bird : birdList) {
                         if (bird.getNameLatin().equalsIgnoreCase(latinBird)) {
-                            searchSwitch(from, bird);
-                            break;
+                            searchSwitch(from, bird, birdList);
+                            return;
                         }
                     }
-                    System.out.println("Bird didn't found");
+                    System.out.println("Bird not found");
                 }
                 default -> System.out.println("Invalid option");
             }
@@ -110,12 +124,13 @@ public class Menu {
     }
 
 
-    //with the method search we access 3 different methods using a switch case
-    public static void searchSwitch(int from, Bird bird){
+    //with the method search we access 4 different methods using a switch case
+    public static void searchSwitch(int from, Bird bird, ArrayList<Bird> birdList){
         switch (from) {
             case 1 -> modifyOptions(bird);
-            case 2 -> addObservation(bird);
-            case 3 -> showBird(bird);
+            case 2 -> deleteBird(bird, birdList);
+            case 3 -> addObservation(bird);
+            case 4 -> showBird(bird);
         }
     }
 

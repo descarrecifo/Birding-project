@@ -31,6 +31,21 @@ public class BirdDatabase {
         }
     }
 
+    public static void statistics(ArrayList<Bird> birdList){
+        int qty = 0;
+        String nameBird = "";
+        for (Bird bird : birdList){
+            if (bird.getObservations() > qty){
+                qty = bird.getObservations();
+                nameBird = bird.getName();
+            }
+        }
+        System.out.println("The user has seen "+birdList.size()+" birds");
+        if(birdList.size()>0){
+            System.out.println("The bird most seen was "+nameBird+" with "+qty+" observations");
+        }
+    }
+
 }
 
 
