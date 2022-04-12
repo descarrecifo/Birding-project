@@ -19,7 +19,7 @@ public class Main {
         birdList.add(testBird);
         birdList.add(testBird2);
 
-        birdList.add(new Bird("Test3", "latinTest3", 2));
+        birdList.add(new Bird("Test3", "latinTest3", 7));
 
         menuOptions(birdList);
     }

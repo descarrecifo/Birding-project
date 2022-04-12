@@ -21,9 +21,6 @@ public class Bird {
         this.observations = observations;
     }
 
-    //methods
-
-
     //************************************************************************************
     //**************************** GETTERS AND SETTERS ***********************************
     //************************************************************************************
@@ -51,6 +48,10 @@ public class Bird {
     public void setObservations(int observations) {
         this.observations = observations;
     }
+
+    //************************************************************************************
+    //*********************************** METHODS ****************************************
+    //************************************************************************************
 
     public static void addObservation(Bird bird){
         int ObsNum = Integer.parseInt(ask(scanner, "How many observations to "+bird.getName()+" do you want to add?"));
