@@ -44,7 +44,10 @@ public class BirdDatabase {
         String nameBird = "";
         ArrayList<Bird> statisticsList = new ArrayList<>();
         for (Bird bird : birdList){ //check if the bird's number of observations is the biggest
-            if (bird.getObservations() >= qty) qty = bird.getObservations();
+            if (bird.getObservations() >= qty) {
+                qty = bird.getObservations();
+                nameBird = bird.getName();
+            }
         }
         for (Bird bird : birdList){ //check if more than one bird has the biggest number of observations
             if(bird.getObservations() == qty) statisticsList.add(bird);
