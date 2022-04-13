@@ -2,6 +2,8 @@ package com.company;
 
 import static com.company.Main.ask;
 import static com.company.Main.scanner;
+import static com.company.Menu.ANSI_RESET;
+import static com.company.Menu.YELLOW_BRIGHT;
 
 public class Bird {
 
@@ -54,12 +56,13 @@ public class Bird {
     //************************************************************************************
 
     public static void addObservation(Bird bird){
-        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to "+bird.getName()+" do you want to add?"));
+        int ObsNum = Integer.parseInt(ask(scanner, "How many observations to "+YELLOW_BRIGHT+bird.getName()+ANSI_RESET+" do you want to add?"));
         bird.setObservations(bird.getObservations()+ObsNum);
     }
 
     @Override
     public String toString() {
-        return "Name: " + name + ", Latin Name: " + nameLatin + ", Number of Observations: " + observations;
+        return "Name: " + YELLOW_BRIGHT + name + ANSI_RESET + ", Latin Name: " + YELLOW_BRIGHT + nameLatin + ANSI_RESET + ", Number of Observations: "
+                + YELLOW_BRIGHT + observations + ANSI_RESET;
     }
 }

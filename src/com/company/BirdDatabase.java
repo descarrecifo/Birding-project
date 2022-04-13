@@ -3,6 +3,8 @@ package com.company;
 import java.util.ArrayList;
 
 import static com.company.Main.*;
+import static com.company.Menu.ANSI_RESET;
+import static com.company.Menu.YELLOW_BRIGHT;
 
 public class BirdDatabase {
 
@@ -13,10 +15,10 @@ public class BirdDatabase {
     public static void addBird(ArrayList<Bird> birdList) {
         int quantity = Integer.parseInt(ask(scanner,"How many birds do you want to add?"));
 
-        for (int i = 0; i<quantity; i++){
-            String name =  ask(scanner, "Name of Bird "+i+": ");
-            String nameLatin = ask(scanner, "Latin Name of Bird "+i+": ");
-            int observations = Integer.parseInt(ask(scanner, "Number of Observations of Bird "+i+": "));
+        for (int i = 1; i<=quantity; i++){
+            String name =  ask(scanner, "Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
+            String nameLatin = ask(scanner, "Latin Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
+            int observations = Integer.parseInt(ask(scanner, "Number of Observations of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": "));
             birdList.add(new Bird(name, nameLatin, observations));
         }
     }
@@ -52,19 +54,19 @@ public class BirdDatabase {
         for (Bird bird : birdList){ //check if more than one bird has the biggest number of observations
             if(bird.getObservations() == qty) statisticsList.add(bird);
         }
-        if(birdList.size()==1) System.out.println("The user has seen "+birdList.size()+" bird.");
-        else System.out.println("The user has seen "+birdList.size()+" birds.");
+        if(birdList.size()==1) System.out.println("The user has seen "+YELLOW_BRIGHT+birdList.size()+ANSI_RESET+" bird.");
+        else System.out.println("The user has seen "+YELLOW_BRIGHT+birdList.size()+ANSI_RESET+" birds.");
         if(birdList.size()>0){ //print different messages for different sizes of the bird list and if one or more have the biggest num of observations
-            if(statisticsList.size()==1) System.out.println("The bird most seen was "+nameBird+" with "+qty+" observations.");
+            if(statisticsList.size()==1) System.out.println("The bird most seen was "+YELLOW_BRIGHT+nameBird+ANSI_RESET+" with "+qty+" observations.");
             else{
                 System.out.print("The birds most seen were ");
                 int i = 0;
                 while(i<(statisticsList.size()-1)){
-                    System.out.print(statisticsList.get(i).getName()+", ");
+                    System.out.print(YELLOW_BRIGHT+statisticsList.get(i).getName()+ANSI_RESET+", ");
                     i++;
                 }
-                System.out.print(statisticsList.get(statisticsList.size()-1).getName());
-                System.out.println(" with "+qty+" observations.");
+                System.out.print(YELLOW_BRIGHT+statisticsList.get(statisticsList.size()-1).getName()+ANSI_RESET);
+                System.out.println(" with "+YELLOW_BRIGHT+qty+ANSI_RESET+" observations.");
             }
         }
     }
