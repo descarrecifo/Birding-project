@@ -13,13 +13,17 @@ public class BirdDatabase {
     //************************************************************************************
 
     public static void addBird(ArrayList<Bird> birdList) {
-        int quantity = Integer.parseInt(ask(scanner,"How many birds do you want to add?"));
-
-        for (int i = 1; i<=quantity; i++){
-            String name =  ask(scanner, "Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
-            String nameLatin = ask(scanner, "Latin Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
-            int observations = Integer.parseInt(ask(scanner, "Number of Observations of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": "));
-            birdList.add(new Bird(name, nameLatin, observations));
+        //ask(scanner, "How many birds do you want to add?");
+        try{
+            int quantity = Integer.parseInt(ask(scanner,"How many birds do you want to add?"));
+            for (int i = 1; i<=quantity; i++){
+                String name =  ask(scanner, "Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
+                String nameLatin = ask(scanner, "Latin Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
+                int observations = Integer.parseInt(ask(scanner, "Number of Observations of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": "));
+                birdList.add(new Bird(name, nameLatin, observations));
+            }
+        }catch (NumberFormatException ex) {
+            System.out.println("Incorrect input, you need to enter a number");
         }
     }
 

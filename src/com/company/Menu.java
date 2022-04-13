@@ -21,12 +21,18 @@ public class Menu {
     // Declaring the color
     // Custom declaration
 
-    public static final String YELLOW_UNDERLINED = "\033[4;33m";
     public static final String YELLOW_BRIGHT = "\033[0;93m";
+    public static final String BRONZE_UNDERLINED = "\033[4;38;2;205;127;50m";
+
+    //For create any colour:
+
+    //  \033[38;2;<r>;<g>;<b>m     #Select RGB foreground color
+    //  \033[48;2;<r>;<g>;<b>m     #Select RGB background color
+
 
     // Declaring the color background
     // Custom declaration
-    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+    public static final String ANSI_BRONZE_BACKGROUND = "\033[48;2;205;127;50m";
 
     // Declaring the font type
     // Custom declaration
@@ -37,19 +43,19 @@ public class Menu {
     //************************************************************************************
 
     public static void menu() {
-        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
-        System.out.print(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.print("           "+YELLOW_UNDERLINED+ANSI_BOLD+"MENU"+ANSI_RESET+"           ");
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 0. Quit                  "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 1. Add Bird              "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 2. Modify Bird           "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 3. Delete Bird           "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 4. Add Observation       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 5. Show Bird             "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 6. Show All Birds        "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 7. User Statistics       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                            "+ANSI_RESET);
+        System.out.print(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.print("           "+BRONZE_UNDERLINED+ANSI_BOLD+"MENU"+ANSI_RESET+"           ");
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0. Quit                  "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1. Add Bird              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2. Modify Bird           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3. Delete Bird           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4. Add Observation       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 5. Show Bird             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 6. Show All Birds        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 7. User Statistics       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                            "+ANSI_RESET);
     }
 
     public static void menuOptions(ArrayList<Bird> birdList){
@@ -76,16 +82,16 @@ public class Menu {
     //************************************************************************************
 
     public static void modifyMenu() {
-        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
-        System.out.print(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.print("          "+YELLOW_UNDERLINED+ANSI_BOLD+"MODIFY"+ANSI_RESET+"          ");
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 0. Return to Search Menu "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 1. Modify Name           "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 2. Modify Latin Name     "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 3. Modify Observation    "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 4. Show Bird             "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+"                            "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                            "+ANSI_RESET);
+        System.out.print(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.print("          "+BRONZE_UNDERLINED+ANSI_BOLD+"MODIFY"+ANSI_RESET+"          ");
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0. Return to Search Menu "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1. Modify Name           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2. Modify Latin Name     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3. Modify Observation    "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4. Show Bird             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                            "+ANSI_RESET);
     }
 
     public static void modifyOptions(Bird bird){
@@ -162,14 +168,14 @@ public class Menu {
     }
 
     public static void searchMenu() {
-        System.out.println(ANSI_YELLOW_BACKGROUND+"                                "+ANSI_RESET);
-        System.out.print(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.print("            "+YELLOW_UNDERLINED+ANSI_BOLD+"SEARCH"+ANSI_RESET+"            ");
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 0. Return to Main Menu       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 1. Search Bird by Name       "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET+" 2. Search Bird by Latin Name "+ANSI_YELLOW_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_YELLOW_BACKGROUND+"                                "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                                "+ANSI_RESET);
+        System.out.print(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.print("            "+BRONZE_UNDERLINED+ANSI_BOLD+"SEARCH"+ANSI_RESET+"            ");
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0. Return to Main Menu       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1. Search Bird by Name       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2. Search Bird by Latin Name "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                                "+ANSI_RESET);
     }
 
 }
