@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import static com.company.Main.*;
 import static com.company.Menu.ANSI_RESET;
@@ -20,7 +21,11 @@ public class BirdDatabase {
                 String name =  ask(scanner, "Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
                 String nameLatin = ask(scanner, "Latin Name of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": ");
                 int observations = Integer.parseInt(ask(scanner, "Number of Observations of Bird "+YELLOW_BRIGHT+i+ANSI_RESET+": "));
-                birdList.add(new Bird(name, nameLatin, observations));
+                String nameFirst = name.substring(0, 1).toUpperCase(); //capitalize first letter
+                String nameRest = name.substring(1).toLowerCase();    //lowercase the rest of letters
+                String nameLatinFirst = nameLatin.substring(0, 1).toUpperCase();
+                String nameLatinRest = nameLatin.substring(1).toLowerCase();
+                birdList.add(new Bird(nameFirst+nameRest, nameLatinFirst+nameLatinRest, observations));
             }
         }catch (NumberFormatException ex) {
             System.out.println("Incorrect input, you need to enter a number");
