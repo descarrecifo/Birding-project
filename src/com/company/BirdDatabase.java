@@ -21,6 +21,13 @@ public class BirdDatabase {
     }
 
     public int getBirdByName(String name){
-
+        int index = -1;
+        for(int x = 0; x < birdArray.size(); x++){
+            if(name == birdArray.get(x).getName()){
+                index = x;
+                break;
+            }
+        }
+        return index;
     }
 }
