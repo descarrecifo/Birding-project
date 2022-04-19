@@ -1,4 +1,4 @@
-package com.company;
+package com.company.model;
 
 public class Bird {
     //attributes
@@ -6,20 +6,12 @@ public class Bird {
     private String nameLatin;
     private int observations;
 
-    //branch 1 david
-
     //constructor
-    public Bird(String name,  String nameLatin, int observations ) {
+    public Bird(String name , String nameLatin , int observations) {
         this.name = name;
         this.nameLatin = nameLatin;
         this.observations = observations;
     }
-
-    public Bird() {
-
-    }
-
-    //methods
 
 
     ////getters and setters
@@ -49,7 +41,7 @@ public class Bird {
     }
 
     public void addObservation() {
-        this.observations ++;
+        this.observations++;
     }
 
     @Override
