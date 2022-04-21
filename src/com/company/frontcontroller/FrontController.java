@@ -6,18 +6,10 @@ import com.company.controller.BirdController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class FrontController {
 
-    private static HashMap dataFromView;
-    private static String value;
-    private static ArrayList<Bird> birds;
-    //just scanner object to manage io
-    Scanner reader = new Scanner(System.in);
-
     public static void mainLoopController(HashMap dataFromView, String value, ArrayList<Bird> birds) {
-
         switch (value) {
             case "1" -> BirdController.addBird(dataFromView, birds);
             case "2" -> SearchController.search(birds, 1);  //add bird
@@ -28,6 +20,5 @@ public class FrontController {
             case "7" -> BirdController.statistics(birds);
             default -> System.out.println("Invalid option\n");
         }
-
     }
 }

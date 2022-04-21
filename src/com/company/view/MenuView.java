@@ -2,7 +2,7 @@ package com.company.view;
 
 import static com.company.utils.Utilities.*;
 
-public class Menu {
+public class MenuView {
 
     public static void mainMenu() {
         System.out.println(ANSI_BRONZE_BACKGROUND+"                            "+ANSI_RESET);
@@ -19,4 +19,5 @@ public class Menu {
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 7. User Statistics       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+"                            "+ANSI_RESET);
     }
+
 }

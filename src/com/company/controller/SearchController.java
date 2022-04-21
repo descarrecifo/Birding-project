@@ -14,7 +14,7 @@ public class SearchController {
 
         while (true) {
             SearchView.searchMenu();
-            String optionSubMenu = SearchView.searchOption(reader);
+            String optionSubMenu = Utilities.menuOption(reader);
             switch (optionSubMenu) {
                 case "0" -> {
                     return;

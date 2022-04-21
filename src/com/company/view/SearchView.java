@@ -25,8 +25,8 @@ public class SearchView {
     public static String searchName(Scanner reader, String value) {
         String name = "";
         switch (value) {
-            case "1" -> name = Utilities.ask(reader, "Write the bird's name: ");
-            case "2" -> name = Utilities.ask(reader, "Write the bird's latin name: ");
+            case "1" -> name = Utilities.askOption(reader, "4");
+            case "2" -> name = Utilities.askOption(reader, "5");
         }
         return name;
 
