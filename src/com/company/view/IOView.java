@@ -1,9 +1,8 @@
 package com.company.view;
 
-//import com.company.controller.SearchController;
-import com.company.controller.SearchController;
+
 import com.company.frontcontroller.FrontController;
-import com.company.controller.BirdController;
+
 import com.company.model.Bird;
 import com.company.utils.Utilities;
 
@@ -11,8 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import static com.company.Menu.ANSI_RESET;
-import static com.company.Menu.YELLOW_BRIGHT;
+import static com.company.utils.Utilities.ANSI_RESET;
+import static com.company.utils.Utilities.YELLOW_BRIGHT;
+
 
 public class IOView {
 
