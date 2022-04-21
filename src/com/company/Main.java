@@ -1,33 +1,16 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import static com.company.Menu.*;
+import static com.company.model.BirdList.newBirdsArray;
+import static com.company.view.IOView.mainLoopView;
 
 public class Main {
 
-    static  Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
 
-        Bird testBird = new Bird("Test1", "latinTest1", 4);
-
-        Bird testBird2 = new Bird("Test2", "latinTest2", 7);
-        ArrayList<Bird> birdList = new ArrayList<>();
-
-        birdList.add(testBird);
-        birdList.add(testBird2);
-
-        birdList.add(new Bird("Test3", "latinTest3", 7));
-
-        menuOptions(birdList);
+        mainLoopView(newBirdsArray());
     }
 
-    public static String ask(Scanner scanner, String text) {    //this method receives the scanner and a String,
-        System.out.println(text);                               //and returns the output of the scanner inserted by the user
-        return scanner.next();
-    }
+
 
 
 
