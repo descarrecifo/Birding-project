@@ -24,17 +24,18 @@ public class IOView {
             Menu.mainMenu();
             String value = Utilities.ask(reader, "Choose an option:"); //with the method ask, we give a value to choose
             //the different cases of the switch
+            HashMap dataFromViewToController = null;
             switch (value) {
                 case "0" -> {
                     return;
                 }
                 case "1" -> addBird(reader, birds);
-                case "2" -> SearchController.search(birds, 1);  //add bird
-                case "3" -> SearchController.search(birds, 2); //modify bird
-                case "4" -> SearchController.search(birds, 3); //delete bird
-                case "5" -> SearchController.search(birds, 4); //add observation
-                case "6" -> BirdController.showAllBirds(birds);
-                case "7" -> BirdController.statistics(birds);
+                case "2" -> FrontController.mainLoopController(dataFromViewToController, "2", birds);
+                case "3" -> FrontController.mainLoopController(dataFromViewToController, "3", birds);
+                case "4" -> FrontController.mainLoopController(dataFromViewToController, "4", birds);
+                case "5" -> FrontController.mainLoopController(dataFromViewToController, "5", birds);
+                case "6" -> FrontController.mainLoopController(dataFromViewToController, "6", birds);
+                case "7" -> FrontController.mainLoopController(dataFromViewToController, "7", birds);
                 default -> System.out.println("Invalid option\n");
             }
         }
