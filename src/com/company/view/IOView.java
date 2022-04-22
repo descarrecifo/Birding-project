@@ -42,11 +42,11 @@ public class IOView {
 
     public static void addBird(Scanner reader, ArrayList<Bird> birds) {
         try {
-            int quantity = Integer.parseInt(Utilities.askOption(reader, "6"));
+            int quantity = Integer.parseInt(Utilities.askOption(reader, "6", null, null));
             for (int i = 1; i <= quantity; i++) {
-                String name = Utilities.ask(reader, "Name of Bird " + YELLOW_BRIGHT + i + ANSI_RESET + ": ");
-                String nameLatin = Utilities.ask(reader, "Latin Name of Bird " + YELLOW_BRIGHT + i + ANSI_RESET + ": ");
-                String observations = Utilities.ask(reader, "Number of Observations of Bird " + YELLOW_BRIGHT + i + ANSI_RESET + ": ");
+                String name = Utilities.askOption(reader, "9", null, i);
+                String nameLatin = Utilities.askOption(reader, "10", null, i);
+                String observations = Utilities.askOption(reader, "11", null, i);
                 String nameFirst = name.substring(0, 1).toUpperCase(); //capitalize first letter
                 String nameRest = name.substring(1).toLowerCase();    //lowercase the rest of letters
                 String nameLatinFirst = nameLatin.substring(0, 1).toUpperCase();
@@ -73,7 +73,7 @@ public class IOView {
     //*************************************************************************************
 
     public static void addObservation(Bird bird, Scanner reader){
-        int ObsNum = Integer.parseInt(Utilities.ask(reader, "How many observations to "+YELLOW_BRIGHT+bird.getName()+ANSI_RESET+" do you want to add?"));
+        int ObsNum = Integer.parseInt(Utilities.askOption(reader, "8", bird, null));
         bird.setObservations(bird.getObservations()+ObsNum);
     }
 

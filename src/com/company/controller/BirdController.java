@@ -50,7 +50,7 @@ public class BirdController {
                 case "0" -> {return;}
                 case "1" -> ModifyView.modifyName(bird, reader);
                 case "2" -> ModifyView.modifyLatinName(bird, reader);
-                case "3" -> bird.setObservations(Integer.parseInt(Utilities.askOption(reader, "7")));
+                case "3" -> bird.setObservations(Integer.parseInt(Utilities.askOption(reader, "7", null, null)));
                 case "4" -> System.out.println(bird.toString());
                 default -> System.out.println("Invalid option\n");
             }

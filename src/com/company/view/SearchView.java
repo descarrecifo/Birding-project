@@ -19,14 +19,14 @@ public class SearchView {
     }
 
     public static String searchOption(Scanner reader) {
-        return Utilities.ask(reader, "Choose an option: ");
+        return Utilities.askOption(reader, "1", null, null);
     }
 
     public static String searchName(Scanner reader, String value) {
         String name = "";
         switch (value) {
-            case "1" -> name = Utilities.askOption(reader, "4");
-            case "2" -> name = Utilities.askOption(reader, "5");
+            case "1" -> name = Utilities.askOption(reader, "4", null, null);
+            case "2" -> name = Utilities.askOption(reader, "5", null, null);
         }
         return name;
 

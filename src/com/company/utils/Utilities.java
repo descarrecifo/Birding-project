@@ -1,6 +1,6 @@
 package com.company.utils;
 
-import com.company.view.MenuView;
+import com.company.model.Bird;
 
 import java.util.Scanner;
 
@@ -42,7 +42,7 @@ public class Utilities {
         return Utilities.ask(reader, "Choose an option: ");
     }
 
-    public static String askOption(Scanner reader, String value) {
+    public static String askOption(Scanner reader, String value, Bird bird, Integer i) {
         String text = switch (value){
             case "1" -> "Choose an option: ";
             case "2" -> "New name";
@@ -51,6 +51,11 @@ public class Utilities {
             case "5" -> "Write the bird's latin name: ";
             case "6" -> "How many birds do you want to add?";
             case "7" -> "New number of observations: ";
+            case "8" -> "How many observations to "+YELLOW_BRIGHT+bird.getName()+ANSI_RESET+" do you want to add?";
+            case "9" -> "Name of Bird " + YELLOW_BRIGHT + i + ANSI_RESET + ": ";
+            case "10" -> "Latin Name of Bird " + YELLOW_BRIGHT + i + ANSI_RESET + ": ";
+            case "11" -> "Number of Observations of Bird " + YELLOW_BRIGHT + i + ANSI_RESET + ": ";
+            default -> "";
         };
         return Utilities.ask(reader, text);
     }

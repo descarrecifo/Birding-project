@@ -23,14 +23,14 @@ public class ModifyView {
     }
 
     public static void modifyName(Bird bird, Scanner reader) {
-        String name = Utilities.askOption(reader, "2");
+        String name = Utilities.askOption(reader, "2", null, null);
         String nameFirst = name.substring(0, 1).toUpperCase(); //capitalize first letter
         String nameRest = name.substring(1).toLowerCase();    //lowercase the rest of letters
         bird.setName(nameFirst + nameRest);
     }
 
     public static void modifyLatinName(Bird bird, Scanner reader) {
-        String nameLatin = Utilities.askOption(reader, "3");
+        String nameLatin = Utilities.askOption(reader, "3", null, null);
         String nameLatinFirst = nameLatin.substring(0, 1).toUpperCase();
         String nameLatinRest = nameLatin.substring(1).toLowerCase();
         bird.setNameLatin(nameLatinFirst + nameLatinRest);
