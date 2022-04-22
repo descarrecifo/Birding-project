@@ -39,7 +39,7 @@ public class Utilities {
         return scanner.next();
     }
     public static String menuOption(Scanner reader) {
-        return Utilities.ask(reader, "Choose an option: ");
+        return Utilities.askOption(reader, "1", null, null);
     }
 
     public static String askOption(Scanner reader, String value, Bird bird, Integer i) {
