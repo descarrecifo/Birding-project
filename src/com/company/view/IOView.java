@@ -64,9 +64,7 @@ public class IOView {
         } catch (NumberFormatException ex) {
             System.out.println("Incorrect input, you need to enter a number");
         }
-
     }
-
 
     //*************************************************************************************
     //******************************* ADD OBSERVATION *************************************
@@ -112,5 +110,4 @@ public class IOView {
             }
         }
     }
-
 }
